@@ -26,14 +26,14 @@ else
 			else
 				defaultdwfilename="$(dirname "${0}")/$(basename "$(curl "$defaultdwfile" -s -L -I -o /dev/null -w '%{url_effective}' | sed -e s/?viasf=1//)")"
 			fi
-			if [[ "$defaultdwfilename" = "$(basename "$(readlink "$dicewaredefault")")" ]]
+			if [[ "$defaultdwfilename" = "$(basename "$(realpath "$dicewaredefault")")" ]]
 			then
 				curl --no-progress-meter -L -o "$defaultdwfilename" -z "$defaultdwfilename" "$defaultdwfile"
 			else
 				curl --no-progress-meter -L -o "$defaultdwfilename" "$defaultdwfile"
 			fi
 			ln -rfs "$defaultdwfilename" "$dicewaredefault"
-		elif [ -f "$(readlink "$dicewaredefault")" ]
+		elif [ -f "$(realpath "$dicewaredefault")" ]
 		then
 			echo -e "${defaultdwfile} is not a reachable plain text file.\nProceeding with '${dicewaredefault}'."
 		else
@@ -43,7 +43,7 @@ else
 	else
 		ln -rfs "$defaultdwfile" "$dicewaredefault"
 	fi
-	sed -i 's/\r$//' "$(readlink "$dicewaredefault")"
+	sed -i 's/\r$//' "$(realpath "$dicewaredefault")"
 	dicewaredatei="$dicewaredefault"
 fi
 if grep -F "11111" "$dicewaredatei" >> /dev/null
@@ -57,20 +57,26 @@ else
 	exit 1
 fi
 declare -i i=0
-while [ $i -lt $wortanzahl ]
-do
-	if [[ "$dwfilelength" = "1296" ]]
-	then
-		woerter[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)) | grep -Ff -  "$dicewaredatei" | awk '{print $2}')"
-	elif [[ "$dwfilelength" = "7776" ]]
-	then
-		woerter[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)) | grep -Ff -  "$dicewaredatei" | awk '{print $2}')"
-	else
-		echo "A diceware list has to contain 1296 or 7776 words. '${dicewaredatei}' contains ${dwfilelength:=0} words. Aborting."
-		exit 1
-	fi
-	i=i+1
-done
+if [[ "$dwfilelength" = "1296" ]]
+then
+	while [ $i -lt $wortanzahl ]
+	do
+			woerter[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)) | \
+				grep -Ff -  "$dicewaredatei" | awk '{print $2}')"
+			i=i+1
+	done
+elif [[ "$dwfilelength" = "7776" ]]
+then
+	while [ $i -lt $wortanzahl ]
+	do
+			woerter[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)) | \
+				grep -Ff -  "$dicewaredatei" | awk '{print $2}')"
+			i=i+1
+	done
+else
+	echo "A diceware list has to contain 1296 or 7776 words. '${dicewaredatei}' contains ${dwfilelength:=0} words. Aborting."
+	exit 1
+fi
 echo "${woerter[*]}"
 (IFS=$'-'; echo "${woerter[*]}")
 rm -f "$dicewaretemp"
