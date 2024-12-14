@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+# https://github.com/DonkeeeyKong/diceware
 source "$(dirname "${0}")/diceware.conf"
 if [ -n "$1" ]
 then
