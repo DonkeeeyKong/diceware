@@ -21,7 +21,7 @@ do
 			# if '-f' is given, set next parameter as diceware list file
 	 		dicewareopt="$OPTARG"
 	 		# shift arguments in case there is a number after the file
-	 		shift "$(($OPTIND -1))"
+	 		shift "$((OPTIND -1))"
 	 		# check again if the now first argument is a number
 	 		# and set to passphrase length if yes
 			if [ -n "$1" ] && [ "$1" -eq "$1" ] 2> /dev/null
@@ -38,7 +38,7 @@ do
 	 		# if 'n' is given, set only numbers to true
 	 		onlynumbers="1"
 	 		# shift arguments in case there is a number after the file
-	 		shift "$(($OPTIND -1))"
+	 		shift "$((OPTIND -1))"
 	 		# check again if the now first argument is a number
 	 		# and set to passphrase length if yes
 	 		if [ -n "$1" ] && [ "$1" -eq "$1" ] 2> /dev/null
@@ -66,9 +66,9 @@ if [[ "$onlynumbers" == "1" ]]
 then
 	# if yes, generate 5 dice rolls per set word, print the numbers and exit
 	declare -i i=0
-	while [ $i -lt $wortanzahl ]
+	while [ $i -lt "$wortanzahl" ]
 	do
-			zahlen[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)))"
+			zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
 			i=i+1
 	done
 	echo "${zahlen[*]}"
@@ -164,18 +164,18 @@ fi
 declare -i i=0
 if [[ "$dwfilelength" = "1296" ]]
 then
-	while [ $i -lt $wortanzahl ]
+	while [ $i -lt "$wortanzahl" ]
 	do
-			zahlen[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)))"
-			woerter[i]="$(echo ${zahlen[i]} | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
+			zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
+			woerter[i]="$(echo "${zahlen[i]}" | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
 			i=i+1
 	done
 elif [[ "$dwfilelength" = "7776" ]]
 then
-	while [ $i -lt $wortanzahl ]
+	while [ $i -lt "$wortanzahl" ]
 	do
-			zahlen[i]="$(echo $(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1))$(($RANDOM % 6 + 1)))"
-			woerter[i]="$(echo ${zahlen[i]} | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
+			zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
+			woerter[i]="$(echo "${zahlen[i]}" | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
 			i=i+1
 	done
 else
