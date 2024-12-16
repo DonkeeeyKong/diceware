@@ -72,7 +72,7 @@ then
 			i=i+1
 	done
 	echo "${zahlen[*]}"
-	exit 1
+	exit 0
 fi
 
 # set default text file for diceware lists (is a symlink)
