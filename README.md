@@ -92,7 +92,7 @@ This option can be used in combination with a custom passphrase length:
 ```
 This will generate an 8-word passphrase from the words in the file `/homer/user/diceware/diceware-7776.txt`
 
-This also possible:
+This is also possible:
 ```
 ./diceware.sh -f /homer/user/diceware/diceware-7776.txt 8
 ```
