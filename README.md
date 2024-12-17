@@ -12,7 +12,7 @@ Two variables can be set in `diceware.conf` (has to be in the same folder as the
 
 ### Default word list
 `defaultdwfile`
-The standard word list to be used. This can be a weblink or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously). If this is set to a weblink, the script will check for updated versions on each run and download an updated version automatically.
+The standard word list to be used. This can be a link to an online resource or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously). If this is set to a link to an online resource, the script will check for updated versions on each run and download an updated version automatically.
 
 Default is [this](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) excellent and carefully curated German word list.
 
@@ -76,7 +76,7 @@ Dice roll results: 11111 22222 33333 444444 55555 66666 12345 23456
 ```
 If the path to a word list file is passed after the flag `-f`, this file is used instead of the default word list set in `diceware.conf`.
 
-Unlike `diceware.conf` this can only be a local file, not a weblink. It has to contain 1296 or 7776 words with their corresponding numbers from 1111 to 6666 resp. 11111 to 66666 (see [settings](#default-word-list) for more information on the required format).
+Unlike `diceware.conf` this can only be a local file, not a link to an online resource. It has to contain 1296 or 7776 words with their corresponding numbers from 1111 to 6666 resp. 11111 to 66666 (see [settings](#default-word-list) for more information on the required format).
 
 **Examples:**
 
