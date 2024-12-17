@@ -1,7 +1,7 @@
 #!/bin/bash
 # Diceware Passphrase Generator Script
 # https://github.com/DonkeeeyKong/diceware
-version="0.1.1"
+version="0.1.2"
 configfile="$(dirname "${0}")/diceware.conf"
 # include config-file
 source "$configfile"
@@ -207,7 +207,7 @@ if grep -F "11111" "$dicewaredatei" >> /dev/null
 then
 	# if yes, get the amount of words with numbers
 	dwfilelength="$(awk '/11111/ {b=NR; next} /66666/ {print NR-b+1; exit}' "$dicewaredatei")"
-# check if the file contains numbers with 5 digits
+# check if the file contains numbers with 4 digits
 elif grep -F "1111" "$dicewaredatei" >> /dev/null
 then
 	# if yes, get the amount of words with numbers
