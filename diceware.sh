@@ -25,7 +25,7 @@ do
 	 		# check if passed argument is a file. Unset variable, if not.
 	 		if [ ! -f "${dicewareopt}" ]
 	 		then
-	 			echo "'${dicewareopt}' is not a file. Proceeding with wordlist '${defaultdwfile}'."
+	 			echo "'${dicewareopt}' is not a file. Proceeding with word list '${defaultdwfile}'."
 	 			echo
 	 			unset dicewareopt
 	 		fi
@@ -49,7 +49,7 @@ do
 	 		echo "command [options] [passhrase length]"
 	 		echo
 	 		echo "No options set:"
-	 		echo "	generate a passphrase from the wordlist set in the config file."
+	 		echo "	generate a passphrase from the word list set in the config file."
 	 		echo "	Use the default passphrase length (6 words, if not set otherwise"
 	 		echo "	in the config file)."
 	 		echo
@@ -60,18 +60,18 @@ do
 	 		echo "	will generate"
 	 		echo "		'word1 word2' and 'word1-word2'"
 	 		echo "	while"
-	 		echo "		command 8 -f [path to optional wordlist file]"
+	 		echo "		command 8 -f [path to optional word list file]"
 	 		echo "	will generate"
 	 		echo "		'word1 word2 word3 word4 word5 word6 word7 word8' and"
 	 		echo "		'word1-word2-word3-word4-word5-word6-word7-word8'"
-	 		echo "		from 'wordlist file' (see below)"
+	 		echo "		from 'word list file' (see below)"
 	 		echo
 	 		echo "optional flags:"
-	 		echo "-f [wordlist file]"
-	 		echo "	use [wordlist file] instead of the wordlist set in the config"
+	 		echo "-f [word list file]"
+	 		echo "	use [word list file] instead of the word list set in the config"
 	 		echo "	file. Has to be a text file with 7776 or 1296 words and contain a"
 	 		echo "	list with dice roll results and their corresponding words."
-	 		echo "	(1296 words: 4 dices thrown simultaneously, 7776 words: 5 dices"
+	 		echo "	(1296 words: 4 dice thrown simultaneously, 7776 words: 5 dice"
 	 		echo "	thrown simultaneously)."
 	 		echo "		list format: [dice roll result] [word]"
 	 		echo "		e.g.:"
@@ -79,9 +79,9 @@ do
 	 		echo "-h"
 	 		echo "	print this help and exit"
 	 		echo "-n "
-	 		echo "	print only numbers, don't use a wordlist, i.e. only simulate dice"
+	 		echo "	print only numbers, don't use a word list, i.e. only simulate dice"
 	 		echo "	rolls without generating a passphrase." 
-	 		echo "	Prints the results of 5 dices thrown simultaneously for as many"
+	 		echo "	Prints the results of 5 dice thrown simultaneously for as many"
 	 		echo "	times as set with [passphrase length] or in the config file."
 	 		echo "	If nothing is set, default is 6 times."
 	 		echo " 	"
