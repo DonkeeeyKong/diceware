@@ -1,7 +1,7 @@
 #!/bin/bash
 # Diceware Passphrase Generator Script
 # https://github.com/DonkeeeyKong/diceware
-version="0.1.2"
+version="0.1.3"
 configfile="$(dirname "${0}")/diceware.conf"
 # include config-file
 source "$configfile"
