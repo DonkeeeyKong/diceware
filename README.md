@@ -50,7 +50,7 @@ Possible command arguments:
 * `-h`: show help
 
 ### Default mode
-If run without any arguments, the script will generate a six-word-passphrase from the word list set in the configuration file `diceware.conf`. If another default passphrase length is set in the configuration file, it will generate a passphrase containing as many words as the number there.
+If run without any arguments, the script will generate a six-word passphrase from the word list set in the configuration file `diceware.conf`. If another default passphrase length is set in the configuration file, it will generate a passphrase containing as many words as the number there.
 
 ### Custom passphrase length
 ```
@@ -90,7 +90,7 @@ This option can be used in combination with a custom passphrase length:
 ```
 ./diceware.sh 8 -f /homer/user/diceware/diceware-7776.txt
 ```
-This will generate an 8-word-passphrase from the words in the file `/homer/user/diceware/diceware-7776.txt`
+This will generate an 8-word passphrase from the words in the file `/homer/user/diceware/diceware-7776.txt`
 
 This also possible:
 ```
@@ -120,7 +120,7 @@ This option can be used in combination with a custom passphrase length:
 ```
 ./diceware.sh 8 -n
 ```
-This will output 8 randomly generated 5-digit-blocks consisting of numbers between 1 and 6.
+This will output 8 randomly generated 5-digit blocks consisting of numbers between 1 and 6.
 
 This is also possible:
 ```
