@@ -41,6 +41,7 @@ do
 		h) 
 			# show help and exit
 			echo "Diceware Passphrase Generator Script ${version}"
+			echo "https://github.com/DonkeeeyKong/diceware"
 			echo "configuration file: $(realpath "${configfile}")"
 			echo
 	 		echo "Usage:"
