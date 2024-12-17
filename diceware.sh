@@ -122,7 +122,7 @@ then
 	declare -i i=0
 	while [ $i -lt "$wortanzahl" ]
 	do
-		zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
+		zahlen[i]="$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))"
 		i=i+1
 	done
 	echo "${zahlen[*]}"
@@ -222,7 +222,7 @@ if [[ "$dwfilelength" = "1296" ]]
 then
 	while [ $i -lt "$wortanzahl" ]
 	do
-			zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
+			zahlen[i]="$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))"
 			woerter[i]="$(echo "${zahlen[i]}" | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
 			i=i+1
 	done
@@ -230,7 +230,7 @@ elif [[ "$dwfilelength" = "7776" ]]
 then
 	while [ $i -lt "$wortanzahl" ]
 	do
-			zahlen[i]="$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))$((RANDOM % 6 + 1))"
+			zahlen[i]="$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))$((SRANDOM % 6 + 1))"
 			woerter[i]="$(echo "${zahlen[i]}" | grep -Ff - "$dicewaredatei" | awk '{print $2}')"
 			i=i+1
 	done
