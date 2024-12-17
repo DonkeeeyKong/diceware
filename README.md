@@ -1,5 +1,5 @@
 # Diceware Passphrase Generator
-Bash script to create passphrases from diceware lists.
+Bash script to create passphrases from any diceware list.
 
 ## Description
 This script can generate (pseudo-)random passphrases from [diceware](https://en.wikipedia.org/wiki/Diceware) lists like [this one](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) using the Bash variable [SRANDOM](https://www.gnu.org/software/bash/manual/bash.html#index-SRANDOM).
@@ -12,7 +12,9 @@ Two variables can be set in `diceware.conf` (has to be in the same folder as the
 
 ### Default word list
 `defaultdwfile`
-The standard word list to be used. This can be a link to an online resource or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously). If this is set to a link to an online resource, the script will check for updated versions on each run and download an updated version automatically.
+The standard word list to be used. This can be a link to an online file or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously). 
+
+If this is set to a link to an online resource, the script will check for updated versions on each run and download an updated version automatically. If checking for updates is not wanted after the first download, the variable can be changed to use the local file the script has previously downloaded. 
 
 Default is [this](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) excellent and carefully curated German word list.
 
