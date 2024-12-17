@@ -3,7 +3,7 @@ Bash script to create passphrases from diceware lists.
 
 ## Description
 This script can generate (pseudo-)random passphrases from [diceware](https://en.wikipedia.org/wiki/Diceware) lists like [this one](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) using the Bash variable [SRANDOM](https://www.gnu.org/software/bash/manual/bash.html#index-SRANDOM).
-It can also be used to simulate rolling five dices simultaneosuly for a set amount of times to get random results to be used with diceware lists.
+It can also be used to simulate rolling five dices simultaneously for a set amount of times to get random results to be used with diceware lists.
 
 *Note that from a cryptographic point of view, it's always better to use actual dice instead of a script to generate random numbers.*
 

@@ -1,9 +1,10 @@
 #!/bin/bash
 # Diceware Passphrase Generator Script
 # https://github.com/DonkeeeyKong/diceware
-version="0.1.3"
+version="0.1.4"
+versiondate="2024-12-17"
 configfile="$(dirname "${0}")/diceware.conf"
-# include config-file
+# include config file
 source "$configfile"
 
 
@@ -40,7 +41,7 @@ do
 	 		;;
 		h) 
 			# show help and exit
-			echo "Diceware Passphrase Generator Script ${version}"
+			echo "Diceware Passphrase Generator Script ${version} (${versiondate})"
 			echo "https://github.com/DonkeeeyKong/diceware"
 			echo "configuration file: $(realpath "${configfile}")"
 			echo
@@ -177,7 +178,7 @@ else
 			echo -e "${defaultdwfile} is not a reachable plain text file.\nProceeding with '${dicewaredefault}'."
 		else
 			# if no, print an error and abort, since there is no list to work with
-			echo -e "${defaultdwfile} is not a reachable plain text file.\n'${dicewaredefault}' doesn't exist or doesn't point to a file.\nAborting."
+			echo -e "${defaultdwfile} is not a reachable plain text file.\n'${dicewaredefault:="A default file"}' doesn't exist or doesn't point to a file.\nAborting."
 			exit 1
 		fi
 	else
