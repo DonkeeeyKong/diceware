@@ -127,3 +127,6 @@ This is also possible:
 ./diceware.sh -n 8
 ```
 
+## Requirements:
+- bash > 5.1
+- curl
