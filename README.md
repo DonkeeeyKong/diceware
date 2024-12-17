@@ -12,7 +12,7 @@ Two variables can be set in `diceware.conf` (has to be in the same folder as the
 
 ### Default word list
 `defaultdwfile`
-The standard word list to be used. This can be a weblink or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously).
+The standard word list to be used. This can be a weblink or a local file. Has to be a text file with a list of either 1296 or 7776 words (i.e rolling four resp. five 6-sided dice simultaneously). If this is set to a weblink, the script will check for updated versions on each run and download an updated version automatically.
 
 Default is [this](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) excellent and carefully curated German word list.
 
@@ -100,7 +100,7 @@ This is not possible:
 ```
 ./diceware.sh -f 8 /homer/user/diceware/diceware-7776.txt
 ```
-Default settings will be used instead
+Default settings will be used instead.
 
 ### Only numbers mode
 ```
