@@ -16,7 +16,7 @@ The standard word list to be used. This can be a link to an online file or a loc
 
 If this is set to a link to an online resource, the script will check for updated versions on each run and download an updated version automatically. If checking for updates is not wanted after the first download, the variable can be changed to use the local file the script has previously downloaded. 
 
-Default is [this](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) excellent and carefully curated German word list by dys2p (created after the excellent example of [this](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) excellent English list by the EFF).
+Default is [this](https://github.com/dys2p/wordlists-de/blob/main/de-7776-v1-diceware.txt) excellent and carefully curated German word list by dys2p (created after the excellent example of [this](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) English list by the EFF).
 
 List format has to be as follows (see [here](https://theworld.com/~reinhold/diceware.html) for examples in various languages):
 ```
