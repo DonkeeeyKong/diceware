@@ -1,8 +1,8 @@
 #!/bin/bash
 # Diceware Passphrase Generator Script
 # https://github.com/DonkeeeyKong/diceware
-version="0.1.4"
-versiondate="2024-12-17"
+version="0.1.5"
+versiondate="2025-01-08"
 configfile="$(dirname "${0}")/diceware.conf"
 # include config file
 source "$configfile"
@@ -147,7 +147,7 @@ else
 	# check if the default file from the configuration file is a weblink
 	if [[ "$defaultdwfile" =~ ^https?://*|^ftp://*|^file://* ]]
 	then
-		# if it's a weblink, check if it's woking and if it points to a text file
+		# if it's a weblink, check if it's working and if it points to a text file
 		if [[ "$(curl -sIkL "$defaultdwfile" | sed -r '/content-type:/I!d;s/.*content-type: (.*)$/\1/I')" =~ ^text/plain* ]] &&
 			[[ ! "$(curl --head --silent --output /dev/null --write-out '%{http_code}' "$defaultdwfile")" =~ ^404*|^403* ]]
 		then
